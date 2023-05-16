@@ -1,0 +1,19 @@
+{
+  "name": "mongooseexpress-api-template",
+  "version": "1.0.0",
+  "description": "A CRUD and Authentication Backend API with NodeJS, Express and MongoDB. It will use the mongoose ODM(Object Document Mapping) to interact with the cloud Mongodb Atlas instance.",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js"
+  },
+  "keywords": [
+    "Mongoose",
+    "Express",
+    "NodeJS",
+    "Mongodb",
+    "MongoDB",
+    "Atlas"
+  ],
+  "author": "Fhatuwani Raphalalani aka BigguyFM98000",
+  "license": "ISC"
+}
