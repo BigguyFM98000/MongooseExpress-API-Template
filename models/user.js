@@ -23,7 +23,22 @@ var schema = new mongoose.Schema({
         type: Date,
         default: () => Date.now()
     },
-    phone: String,
+    phone: {
+        type: String,
+        required: false
+    },
+    profileImage: { 
+        type: String, 
+        default: 'https://www.pngitem.com/pimgs/m/22-223968_default-profile-picture-circle-hd-png-download.png' 
+    },
+    date: {
+        type: Date,
+        default: () => Date.now()
+    },
+    employees: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Employee'
+    }]
 });
 
 var user = new mongoose.model('User', schema);
