@@ -7,6 +7,7 @@ const PORT = process.env.PORT || 4200;
 const conn_string = process.env.CONN_STRING;
 const UserRoutes = require('./routes/userRoutes');
 const AuthRoutes = require('./routes/authRoutes');
+const uploadsRoute = require('./routes/cloudinaryRoute');
 
 const app = express();
 
@@ -30,6 +31,7 @@ app.get('/', (req, res) => {
 // Adding the route class to the server.js file
 app.use('/user', UserRoutes);
 app.use('/auth', AuthRoutes);
+app.use('/upload-images', uploadsRoute);
 
 // Listen on port 3000 for incoming connections.
 app.listen(PORT, () => {
