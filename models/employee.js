@@ -34,8 +34,7 @@ let employeeSchema = new Schema({
     },
     user: {
         type: Schema.Types.ObjectId,
-        required: true,
-        default: "6407103069317b75b34b6ab5",
+        required: false,
         ref: 'User'
     }
 });

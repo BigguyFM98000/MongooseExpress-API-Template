@@ -8,6 +8,7 @@ const PORT = process.env.PORT || 4200;
 const UserRoutes = require('./routes/userRoutes');
 const AuthRoutes = require('./routes/authRoutes');
 const uploadsRoute = require('./routes/cloudinaryRoute');
+const EmployeeRoutes = require('./routes/employeeRoutes');
 
 const app = express();
 
@@ -32,6 +33,7 @@ app.get('/', (req, res) => {
 app.use('/user', UserRoutes);
 app.use('/auth', AuthRoutes);
 app.use('/upload-images', uploadsRoute);
+app.use('/employee', EmployeeRoutes);
 
 // Listen on port 3000 for incoming connections.
 app.listen(PORT, () => {

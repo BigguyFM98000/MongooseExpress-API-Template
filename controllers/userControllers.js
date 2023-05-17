@@ -1,29 +1,6 @@
 const UserModel = require('../models/user');
 // NB. I have used async and await keywords as the database query takes time and so the asynchronous property of node js comes in.
 
-// Create and Save a new user
-exports.create = async (req, res) => {
-    if ( !req.body.firstname && !req.body.lastname && !req.body.phone && !req.body.email ) {
-        res.status(400).send({ message: "Content cannot be empty!" });
-    }
-    
-    const user = new UserModel({
-        firstname: req.body.firstname,
-        lastname: req.body.lastname,
-        email: req.body.email,
-        phone: req.body.phone,  
-    });
-    
-    await user.save().then(data => {
-        res.send({
-            message:"User created successfully!!",
-            user: data});
-        }).catch(err => {
-        res.status(500).send(
-            {message: err.message || "Some error occurred while creating user"});
-        });
-};
-
 // Retrieve all users from the database.
 exports.findAll = async (req, res) => {
     try {
