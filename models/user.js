@@ -36,7 +36,7 @@ var schema = new mongoose.Schema({
         default: () => Date.now()
     },
     employees: [{
-        type: Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: 'Employee'
     }]
 });
