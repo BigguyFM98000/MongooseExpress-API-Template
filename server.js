@@ -4,7 +4,7 @@ const bodyParser = require('body-parser'); // Module that parses the request (of
 const mongoose = require('mongoose'); // Mongodb ODM
 
 const PORT = process.env.PORT || 4200;
-const conn_string = process.env.CONN_STRING;
+// const conn_string = process.env.Conn_String;
 const UserRoutes = require('./routes/userRoutes');
 const AuthRoutes = require('./routes/authRoutes');
 const uploadsRoute = require('./routes/cloudinaryRoute');
@@ -17,7 +17,7 @@ app.use(bodyParser.json())
 
 // Connecting to cloud Mongodb Atlas instance
 mongoose.Promise = global.Promise;
-mongoose.connect(conn_string, {useNewUrlParser: true}).then(() => {
+mongoose.connect(process.env.Conn_String, {useNewUrlParser: true}).then(() => {
     console.log("Database Connected Successfully!!!");    
 }).catch(err => {
     console.log('Could not connect to the database', err);
